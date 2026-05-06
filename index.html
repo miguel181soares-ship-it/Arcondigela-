@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arcondigela - Gestão de Refrigeração</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #0056b3;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 20px 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: transform 0.2s, background-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Cores dos Botões */
+        .btn-cliente { background-color: #3498db; } /* Azul */
+        .btn-os { background-color: #2ecc71; }      /* Verde */
+        .btn-tecnico { background-color: #9b59b6; } /* Roxo */
+        .btn-urgencia { 
+            background-color: #e74c3c;              /* Vermelho */
+            grid-column: span 2; 
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>❄️ arcondigela>
+        
+        
+        <div class="menu-grid">
+            <button class="btn btn-cliente" onclick="alert('Abrir Cadastro de Clientes')">
+                <span class="icon">👥</span> Clientes
+            </button>
+            
+            <button class="btn btn-os" onclick="alert('Gerar Nova O.S.')">
+                <span class="icon">📋</span> Ordens de Serviço
+            </button>
+            
+            <button class="btn btn-tecnico" onclick="alert('Painel do Técnico')">
+                <span class="icon">🔧</span> Técnicos
+            </button>
+
+            <button class="btn btn-urgencia" onclick="alert('ALERTA: Chamado de Urgência Ativado!')">
+                <span class="icon">🚨</span> CHAMADO DE URGÊNCIA
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
